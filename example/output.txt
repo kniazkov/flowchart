@@ -1,0 +1,32 @@
+digraph flowchart {
+  splines=polyline;
+  node_0 [label=<begin> shape=oval style=solid];
+  node_1 [label=<read m> shape=parallelogram style=solid];
+  node_2 [label=<read n> shape=parallelogram style=solid];
+  node_3 [label=<n &gt; 0 or m &gt; 0 ?> shape=diamond style=solid];
+  node_4 [label=<label> shape=box style=rounded];
+  node_5 [label=<m = n ?> shape=diamond style=solid];
+  node_6 [label=<write m> shape=parallelogram style=solid];
+  node_7 [label=<end> shape=oval style=solid];
+  node_8 [label=<m &gt; n ?> shape=diamond style=solid];
+  node_9 [label=<m = m - n> shape=box style=solid];
+  node_11 [label=<> shape=none style=solid];
+  node_10 [label=<n = n - m> shape=box style=solid];
+  node_12 [label=<error: incorrect values> shape=octagon style=solid];
+  node_13 [label=<check correctness> shape=box style=dashed];
+  node_0 -> node_1
+  node_1 -> node_2
+  node_2 -> node_3
+  node_3 -> node_4 [label=< yes>]
+  node_3 -> node_12 [label=< no>]
+  node_4 -> node_5
+  node_5 -> node_6 [label=< yes>]
+  node_5 -> node_8 [label=< no>]
+  node_6 -> node_7
+  node_8 -> node_9 [label=< yes>]
+  node_8 -> node_10 [label=< no>]
+  node_9 -> node_4
+  node_10 -> node_4
+  node_13 -> node_3 [style="dashed"];
+  { rank=same; node_13; node_3 };
+}
