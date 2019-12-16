@@ -1,14 +1,14 @@
 BEGIN
 INPUT read m
 INPUT read n
-IF n > 0 or m > 0  ' check correctness
+IF n > 0 or m > 0  ' check^correctness
     :label
     IF m = n
         OUTPUT write m
         END
     ELSE
         IF m > n
-            m = m - n
+            #red m = m - n
         ELSE
             n = n - m
         END_IF

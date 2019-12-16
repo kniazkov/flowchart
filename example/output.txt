@@ -1,19 +1,19 @@
 digraph flowchart {
   splines=polyline;
-  node_0 [label=<begin> shape=oval style=solid];
-  node_1 [label=<read m> shape=parallelogram style=solid];
-  node_2 [label=<read n> shape=parallelogram style=solid];
-  node_3 [label=<n &gt; 0 or m &gt; 0 ?> shape=diamond style=solid];
-  node_4 [label=<label> shape=box style=rounded];
-  node_5 [label=<m = n ?> shape=diamond style=solid];
-  node_6 [label=<write m> shape=parallelogram style=solid];
-  node_7 [label=<end> shape=oval style=solid];
-  node_8 [label=<m &gt; n ?> shape=diamond style=solid];
-  node_9 [label=<m = m - n> shape=box style=solid];
-  node_11 [label=<> shape=none style=solid];
-  node_10 [label=<n = n - m> shape=box style=solid];
-  node_12 [label=<error: incorrect values> shape=octagon style=solid];
-  node_13 [label=<check correctness> shape=box style=dashed];
+  node_0 [label=<begin> shape=oval style=solid color=black];
+  node_1 [label=<read m> shape=parallelogram style=solid color=black];
+  node_2 [label=<read n> shape=parallelogram style=solid color=black];
+  node_3 [label=<n &gt; 0 or m &gt; 0 ?> shape=diamond style=solid color=black];
+  node_4 [label=<label> shape=box style=rounded color=black];
+  node_5 [label=<m = n ?> shape=diamond style=solid color=black];
+  node_6 [label=<write m> shape=parallelogram style=solid color=black];
+  node_7 [label=<end> shape=oval style=solid color=black];
+  node_8 [label=<m &gt; n ?> shape=diamond style=solid color=black];
+  node_9 [label=<m = m - n> shape=box style=solid color=red];
+  node_11 [label=<> shape=none style=solid color=black];
+  node_10 [label=<n = n - m> shape=box style=solid color=black];
+  node_12 [label=<error: incorrect values> shape=octagon style=solid color=black];
+  node_13 [label=<check<br/>correctness> shape=box style=dashed color=black];
   node_0 -> node_1
   node_1 -> node_2
   node_2 -> node_3
