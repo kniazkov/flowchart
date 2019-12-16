@@ -29,6 +29,7 @@ public abstract class Statement {
     private int id;
     public ArrayList<Statement> predecessors;
     public Comment comment;
+    public String color = "black";
 
     public Statement() {
         id = uid++;
@@ -63,6 +64,9 @@ public abstract class Statement {
                 case '&':
                     result.append("&amp;");
                     break;
+                case '^':
+                    result.append("<br/>");
+                    break;
                 default:
                     result.append(ch);
             }
@@ -82,6 +86,8 @@ public abstract class Statement {
                 .append(getShape())
                 .append(" style=")
                 .append(getStyle())
+                .append(" color=")
+                .append(color)
                 .append("];\n");
         for (Statement successor : getSuccessors()) {
             successor.buildNodeDeclaration(builder, processed);
