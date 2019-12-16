@@ -46,10 +46,18 @@ public class Parser {
             String line = lines.poll().trim();
             if (line.length() > 0) {
                 String comment = null;
+                String color = "black";
                 int idx = line.indexOf('\'');
                 if (idx >= 0) {
                     comment = line.substring(idx + 1).trim();
                     line = line.substring(0, idx).trim();
+                }
+                if (line.startsWith("#")) {
+                    idx = line.indexOf(' ');
+                    if (idx == -1)
+                        throw new ParserError("Syntax error");
+                    color = line.substring(1, idx);
+                    line = line.substring(idx + 1).trim();
                 }
                 next = null;
                 if (line.startsWith(":")) {
@@ -137,6 +145,7 @@ public class Parser {
                 if (next != null) {
                     if (comment != null && comment.length() > 0)
                         next.comment = new Comment(comment);
+                    next.color = color;
                     if (result != null) {
                         result.tail.setSuccessor(next);
                         result.tail = next;
